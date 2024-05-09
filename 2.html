@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0063B1] flex justify-center py-36">
+
+    <div class="wrap border"
+        style="text-align: center; padding: 50px;background-color: aliceblue; border-radius: 30px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <h1 class="text-[40px] font-medium underline mb-10">Seasons</h1>
+        <h2 id="month" class="text-[30px] font-medium mb-5"></h2>
+        <h2 id="season" class="text-[30px] font-medium mb-5"></h2>
+    </div>
+
+
+    <script>
+        let month = 8;
+        let s;
+
+
+        switch (month) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                s = "Winter";
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                s = "Summer";
+                break;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                s = "Monsoon";
+                break;
+
+            default:
+                s = "invalid season";
+        }
+        document.getElementById("The season for month " + month + " is: " + s);
+
+        document.getElementById("month").innerHTML = "Month : "+  month;
+        document.getElementById("season").innerHTML = "Season is : "+  s;
+
+
+    </script>
+</body>
+
+</html>

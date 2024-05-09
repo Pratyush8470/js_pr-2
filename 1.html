@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            padding: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap border"
+        style="text-align: center; padding: 50px;background-color: aliceblue; border-radius: 30px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <h1 class="text-[40px] font-medium underline mb-10">Electrycity Bill</h1>
+        <h2 id="unit" class="text-[30px] font-medium mb-5"></h2>
+        <h2 id="surcharg" class="text-[30px] font-medium mb-5"></h2>
+        <h2 id="total" class="text-[30px] font-medium mb-5"></h2>
+    </div>
+
+
+    <script>
+        let unit = 150, total;
+        document.getElementById("unit").innerHTML = "Unit : " + unit;
+
+        document.getElementById("surcharg").innerHTML = "Surcharge : 20%";
+
+        if (unit <= 50) {
+            total = unit
+            document.getElementById("total").innerHTML = "Total : " + unit + "units = " + "  " + total + "rs";
+        } else if (unit <= 150) {
+            total = ((unit - 50) * 2) + 50;
+            document.getElementById("total").innerHTML = "Total : " + unit + "units = " + "  " + total + "rs";
+        } else if (unit <= 250) {
+            total = ((unit - 150) * 3) + 200 + 50;
+            total += (total *= 0.2);
+            document.getElementById("total").innerHTML = "Total : " + unit + "units = " + "  " + total + "rs";
+
+        } else {
+            total = ((unit - 250) * 4) + 300 + 200 + 50;
+            total += (total *= 0.2);
+            document.getElementById("total").innerHTML = "Total : " + unit + "units = " + "  " + total + "rs";
+        }
+
+
+    </script>
+</body>
+
+</html>
